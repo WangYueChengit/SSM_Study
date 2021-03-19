@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="easymall.dao.AddressDao">
+	<insert id="addAddress" parameterType="easymall.po.Address" >
+		insert into address(uid,address) values(#{uid},#{address})
+	</insert>
+	<select id="findAddress" parameterType="Integer" resultType="easymall.po.Address">
+		select uid,address from address where uid=#{uid}
+	</select>
+	<update id="updateAddress" parameterType="easymall.po.Address">
+		update address set address=#{address} where uid=#{uid}
+	</update>
+</mapper>
